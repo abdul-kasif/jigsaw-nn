@@ -1,18 +1,32 @@
 name: ml_env
+
 channels:
+  - pytorch
   - conda-forge
+
 dependencies:
-  - python=3.12
-  - pip
+  - python=3.11
+
+  # Deep Learning
+  - pytorch
+  - cpuonly
+
+  # Data Processing
   - numpy
   - pandas
+  - scipy
+
+  # Classical Machine Learning
   - scikit-learn
+
+  # Visualization
   - matplotlib
   - seaborn
-  # Deep Learning core
-  - pytorch
-  - torchvision
-  - pytorch-lightning
-  - pip:
-      - transformers
-      - wandb
+
+  # Development
+  - jupyterlab
+  - ipykernel
+  - tqdm
+
+  # Utilities
+  - pyyaml

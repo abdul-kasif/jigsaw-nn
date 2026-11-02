@@ -1,17 +1,11 @@
 # ==============================================================================
 # Project-Specific Data & Artifacts
 # ==============================================================================
-# Ignore the entire data directory holding the Jigsaw dataset CSVs
-data/
-/data/
-*.csv
-*.tsv
-*.zip
-*.gz
-*.tar
+data/raw/*
+data/processed/*
 
 # Ignore trained models, weights, and checkpoints
-models/
+models/*
 checkpoints/
 *.pt
 *.pth
@@ -56,3 +50,12 @@ Thumbs.db
 .idea/
 *.sublime-project
 *.sublime-workspace
+
+# Experiment outputs
+reports/*
+
+# Keep empty directories
+!data/raw/.gitkeep
+!data/processed/.gitkeep
+!models/.gitkeep
+!reports/.gitkeep
