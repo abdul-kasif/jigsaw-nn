@@ -1,0 +1,58 @@
+# ==============================================================================
+# Project-Specific Data & Artifacts
+# ==============================================================================
+# Ignore the entire data directory holding the Jigsaw dataset CSVs
+data/
+/data/
+*.csv
+*.tsv
+*.zip
+*.gz
+*.tar
+
+# Ignore trained models, weights, and checkpoints
+models/
+checkpoints/
+*.pt
+*.pth
+*.pkl
+*.h5
+
+# Experiment tracking & local reports
+wandb/
+lightning_logs/
+.ipynb_checkpoints/
+htmlcov/
+.tox/
+.coverage
+coverage.xml
+
+# ==============================================================================
+# Python & Environment Virtualization
+# ==============================================================================
+__pycache__/
+*.py[cod]
+*$py.class
+.env
+.venv
+env/
+venv/
+ENV/
+bin/
+lib/
+include/
+
+# Micromamba / Conda specific environment locks
+.conda/
+conda-meta/
+environment.lock.yml
+
+# ==============================================================================
+# System & IDE Specific Files
+# ==============================================================================
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
