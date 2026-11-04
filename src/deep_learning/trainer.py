@@ -78,3 +78,37 @@ def evaluate(model, dataloader, criterion, device):
     average_loss = total_loss / total_samples
 
     return average_loss
+
+
+def predict(model, dataloader, device):
+    """
+    Generate probabilities and collect ground-truth labels.
+
+    Returns:
+        y_true: Ground-truth labels.
+        y_prob: Predicted probabilities.
+    """
+
+    model.eval()
+
+    all_labels = []
+    all_probabilities = []
+
+    with torch.no_grad():
+        for batch in dataloader:
+            input_ids = batch["input_ids"].to(device)
+            lengths = batch["lengths"]
+            labels = batch["labels"]
+
+            logits = model(input_ids, lengths)
+
+            # Convert logits into probabilities.
+            probabilities = torch.sigmoid(logits)
+
+            all_labels.append(labels.cpu())
+            all_probabilities.append(probabilities.cpu())
+
+    y_true = torch.cat(all_labels, dim=0)
+    y_prob = torch.cat(all_probabilities, dim=0)
+
+    return y_true, y_prob
