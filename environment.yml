@@ -2,6 +2,7 @@ name: ml_env
 
 channels:
   - pytorch
+  - nvidia
   - conda-forge
 
 dependencies:
@@ -9,7 +10,7 @@ dependencies:
 
   # Deep Learning
   - pytorch
-  - cpuonly
+  - pytorch-cuda
 
   # Data Processing
   - numpy
